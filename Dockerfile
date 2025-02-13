@@ -8,7 +8,7 @@ FROM        gitlab/gitlab-runner:alpine3.19-f012c9b6
 LABEL       author="MrGazdag" maintainer="44264503+MrGazdag@users.noreply.github.com"
 
 RUN apk -U add curl ca-certificates openssl git tar sqlite fontconfig tzdata iproute2 \
- && useradd -d /home/container -m container
+ && adduser -D -h /home/container container
  
 USER container
 ENV  USER=container HOME=/home/container
