@@ -7,7 +7,7 @@ FROM        gitlab/gitlab-runner:alpine3.19-f012c9b6
 
 LABEL       author="MrGazdag" maintainer="44264503+MrGazdag@users.noreply.github.com"
 
-RUN apk -U add bash curl ca-certificates openssl git tar sqlite fontconfig tzdata iproute2 newuidmap
+RUN apk -U add bash curl ca-certificates openssl git tar sqlite fontconfig tzdata iproute2 uidmap
 ENV FORCE_ROOTLESS_INSTALL=true
 RUN curl -fsSL https://get.docker.com/rootless | sh
 
