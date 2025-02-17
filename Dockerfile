@@ -10,6 +10,7 @@ LABEL       author="MrGazdag" maintainer="44264503+MrGazdag@users.noreply.github
 RUN apk -U add bash curl ca-certificates openssl git tar sqlite fontconfig tzdata iproute2 shadow-subids iptables
 ENV FORCE_ROOTLESS_INSTALL=true
 RUN echo "root:100000:65536" >> /etc/subuid
+RUN echo "root:100000:65536" >> /etc/subgid
 RUN curl -fsSL https://get.docker.com/rootless | sh
 
 RUN adduser -D -h /home/container -s /bin/bash container 
