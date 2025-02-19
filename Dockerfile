@@ -11,6 +11,7 @@ RUN apk -U add --no-cache bash curl ca-certificates openssl git tar sqlite fontc
 
 RUN adduser -D -h /home/container -s /bin/bash container
 RUN addgroup container root
+RUN addgroup container docker
 RUN echo "container ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/container
 USER        container
 ENV         USER=container HOME=/home/container
